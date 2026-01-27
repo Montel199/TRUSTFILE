@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustFile – Secure File Check</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Optional: add Font Awesome for icons later -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
+</head>
+
+<body class="upload-page">
+
+    <div class="container">
+        <h2>TrustFile</h2>
+        <p class="subtitle">Verify your files — fast, secure, private</p>
+
+        <form method="POST" enctype="multipart/form-data" id="upload-form">
+            <!-- Drag & drop friendly area -->
+            <div class="upload-area" id="drop-zone">
+                <div class="upload-prompt">
+                    <i class="upload-icon">📤</i> <!-- You can replace with Font Awesome later -->
+                    <p>Drag & drop your file here</p>
+                    <p>or</p>
+                    <label for="file-input" class="browse-btn">Browse files</label>
+                </div>
+                <input type="file" id="file-input" name="file" required hidden>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn-primary">Analyze File</button>
+                <!-- You can enable this later or remove it -->
+                <!-- <button type="button" class="btn-secondary">Clear</button> -->
+            </div>
+        </form>
+
+        <footer class="small-footer">
+            Powered by cryptographic hashing & smart analysis • Local processing
+        </footer>
+    </div>
+
+</body>
+</html>
