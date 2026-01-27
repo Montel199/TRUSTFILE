@@ -12,6 +12,13 @@
 <body class="upload-page">
 
     <div class="container">
+
+        <div class="upload-preview info-box" style="display:none;">
+    <img src="" alt="File Preview" class="file-thumbnail" id="filePreview">
+    <p><span class="report-label">Selected File:</span> <span class="report-value" id="fileName"></span></p>
+    <p><span class="report-label">Size:</span> <span class="report-value" id="fileSize"></span></p>
+</div>
+
         <h2>TrustFile</h2>
         <p class="subtitle">Verify your files — fast, secure, private</p>
 
@@ -38,6 +45,37 @@
             Powered by cryptographic hashing & smart analysis • Local processing
         </footer>
     </div>
+
+    <script>
+const fileInput = document.querySelector('input[type="file"]');
+const previewBox = document.querySelector('.upload-preview');
+const fileName = document.getElementById('fileName');
+const fileSize = document.getElementById('fileSize');
+const filePreview = document.getElementById('filePreview');
+
+fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    if (!file) {
+        previewBox.style.display = 'none';
+        return;
+    }
+    
+    fileName.textContent = file.name;
+    fileSize.textContent = (file.size / 1024).toFixed(2) + ' KB';
+    
+    // For images only
+    if(file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = e => filePreview.src = e.target.result;
+        reader.readAsDataURL(file);
+        filePreview.style.display = 'block';
+    } else {
+        filePreview.style.display = 'none';
+    }
+
+    previewBox.style.display = 'block';
+});
+</script>
 
 </body>
 </html>

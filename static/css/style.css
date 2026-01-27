@@ -134,3 +134,94 @@ h2 {
     color: #88ccff;
     opacity: 0.8;
 }
+/* ===== SMOOTH PAGE LOAD ===== */
+.container {
+    animation: fadeSlideIn 0.8s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ===== CARD-LIKE ELEMENTS FOR FILE INFO ===== */
+.report-card {
+    background: rgba(255,255,255,0.05);
+    padding: 25px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+.report-label {
+    font-weight: bold;
+    color: #00c6ff;
+    margin-right: 6px;
+}
+
+.report-value {
+    color: #ffffff;
+}
+
+/* ===== IMAGE PLACEHOLDER STYLING ===== */
+.file-thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #00c6ff;
+    margin-bottom: 12px;
+}
+
+/* ===== ADDITIONAL INFO BOX ===== */
+.info-box {
+    background: rgba(0,255,174,0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #00ffae;
+}
+
+/* ===== CENTERED FOOTER BUTTONS ===== */
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+/* ===== HOVER EFFECTS FOR EXTRA BUTTONS ===== */
+.extra-btn {
+    padding: 10px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #00ffae;
+    color: #000;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.extra-btn:hover {
+    background: #00c6ff;
+    transform: translateY(-2px);
+}
+
+/* ===== IMAGE IN REPORT CARD ===== */
+.report-card img {
+    display: block;
+    margin-bottom: 12px;
+}

@@ -8,13 +8,29 @@
 <body class="report-page">
 
     <div class="container">
-        <h3>TrustFile Analysis Report</h3>
-        <pre>{{ report }}</pre>
-        <br>
-        <a href="/" class="button-link"><button>Upload Another File</button></a>
-        <!-- Add more buttons here if needed -->
-        <button>Extra Action</button>
+
+        <div class="container">
+    <h2>TrustFile Analysis Report</h2>
+
+<p>Your file has been analyzed successfully. Below are the details of the analysis:</p>
+
+    <div class="report-card">
+        {% if report_image %}
+        <img src="{{ url_for('static', filename='images/' + report_image) }}" alt="File Thumbnail">
+        {% endif %}
+        <p><span class="report-label">Filename:</span> <span class="report-value">{{ filename }}</span></p>
+        <p><span class="report-label">Extension:</span> <span class="report-value">.{{ extension }}</span></p>
+        <p><span class="report-label">Detected Type:</span> <span class="report-value">{{ detected_type }}</span></p>
+        <p><span class="report-label">Risk Level:</span> <span class="report-value">{{ risk_level }}</span></p>
+        <p><span class="report-label">Reason:</span> <span class="report-value">{{ reason }}</span></p>
+        <p><span class="report-label">SHA-256 Hash:</span> <span class="report-value">{{ sha256 }}</span></p>
     </div>
-</body>
-</html>
+
+<a href="/" class="button-link"><button>Upload Another File</button></a> 
+<!-- Add more buttons here if needed --> 
+</div>
+ </body> 
+ </html>
+
+
 
